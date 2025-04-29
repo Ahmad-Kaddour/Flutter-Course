@@ -1,16 +1,11 @@
 # quiz_app
 
-A new Flutter project.
+Flutter app where you can answer some questions and see a result summery at the end of the quiz.
 
-## Getting Started
+## Screenshots
 
-This project is a starting point for a Flutter application.
+![Screenshot_1745947082.png](screenshots/Screenshot_1745947082.png)
 
-A few resources to get you started if this is your first Flutter project:
+![Screenshot_1745947088.png](screenshots/Screenshot_1745947088.png)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Screenshot_1745947098.png](screenshots/Screenshot_1745947098.png)
