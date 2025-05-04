@@ -4,6 +4,6 @@ Roll the dice flutter app.
 
 ## Screenshots
 
-![alt text](screenshots/Screenshot_1745947658.png)
+<img src="screenshots/Screenshot_1745947658.png" alt="Alt Text" width="200" height="400">
 
-![alt text](screenshots/Screenshot_1745947662.png)
+<img src="screenshots/Screenshot_1745947662.png" alt="Alt Text" width="200" height="400">
