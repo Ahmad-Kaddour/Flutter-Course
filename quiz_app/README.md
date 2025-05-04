@@ -4,8 +4,4 @@ Flutter app where you can answer some questions and see a result summery at the 
 
 ## Screenshots
 
-![Screenshot_1745947082.png](screenshots/Screenshot_1745947082.png)
-
-![Screenshot_1745947088.png](screenshots/Screenshot_1745947088.png)
-
-![Screenshot_1745947098.png](screenshots/Screenshot_1745947098.png)
+<img src="screenshots/Screenshot_1745947082.png" alt="Alt Text" width="200" height="400">  <img src="screenshots/Screenshot_1745947088.png" alt="Alt Text" width="200" height="400">  <img src="screenshots/Screenshot_1745947098.png" alt="Alt Text" width="200" height="400">
