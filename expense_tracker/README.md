@@ -1,16 +1,8 @@
 # expense_tracker
 
-A new Flutter project.
+Flutter app where you can manage your expanses, and see a chart of where you are spending your money.
 
-## Getting Started
+## Screenshots
 
-This project is a starting point for a Flutter application.
+![alt text](screenshots/Screenshot_1746036362.png) ![alt text](screenshots/Screenshot_1746036366.png) ![alt text](screenshots/Screenshot_1746036373.png) ![alt text](screenshots/Screenshot_1746036375.png)
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
