@@ -81,7 +81,6 @@ class _NewExpenseState extends State<NewExpense> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      maintainBottomViewPadding: true,
       child: SizedBox(
         height: double.infinity,
         width: double.infinity,
