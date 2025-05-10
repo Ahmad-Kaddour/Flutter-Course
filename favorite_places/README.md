@@ -1,16 +1,7 @@
 # favorite_places
 
-A new Flutter project.
+An app where you can add your favorite places, take a photo of the place and capture place location. The app demonstraits the use of native features in Flutter such as using the device camera, storing files to the internal storage and presesting data using sqlite database.
 
-## Getting Started
+## Screenshots
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img src="screenshots/Screenshot_1746917340.png" alt="Alt Text" width="200" height="400"> <img src="screenshots/Screenshot_1746917341.png" alt="Alt Text" width="200" height="400"> <img src="screenshots/Screenshot_1746917351.png" alt="Alt Text" width="200" height="400"> <img src="screenshots/Screenshot_1746917357.png" alt="Alt Text" width="200" height="400"> <img src="screenshots/Screenshot_1746917398.png" alt="Alt Text" width="200" height="400"> <img src="screenshots/Screenshot_1746917453.png" alt="Alt Text" width="200" height="400">
