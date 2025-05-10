@@ -1,12 +1,18 @@
-import 'package:favorite_places/models/place.dart';
 import 'package:favorite_places/providers/places_provider.dart';
 import 'package:favorite_places/screens/new_place.dart';
-import 'package:favorite_places/screens/place_details.dart';
+import 'package:favorite_places/widgets/places_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class PlacesScreen extends ConsumerWidget {
+class PlacesScreen extends ConsumerStatefulWidget {
   const PlacesScreen({super.key});
+
+  @override
+  ConsumerState<ConsumerStatefulWidget> createState() => _PlacesScreenState();
+}
+
+class _PlacesScreenState extends ConsumerState<PlacesScreen> {
+  late Future<void> _placesFuture;
 
   void _addNewPlace(BuildContext context) {
     Navigator.of(
@@ -14,52 +20,15 @@ class PlacesScreen extends ConsumerWidget {
     ).push(MaterialPageRoute(builder: (ctx) => const NewPlaceScreen()));
   }
 
-  void _openPlaceDetails(BuildContext context, Place place) {
-    Navigator.of(context).push(
-      MaterialPageRoute(builder: (ctx) => PlaceDetailsScreen(place: place)),
-    );
+  @override
+  void initState() {
+    super.initState();
+    _placesFuture = ref.read(placesProvider.notifier).loadPlaces();
   }
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     final places = ref.watch(placesProvider);
-    Widget content = Center(
-      child: Text(
-        'No places added yet',
-        style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-          color: Theme.of(context).colorScheme.onSurface,
-        ),
-      ),
-    );
-
-    if (places.isNotEmpty) {
-      content = Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: ListView.builder(
-          itemCount: places.length,
-          itemBuilder:
-              (itemContext, index) => ListTile(
-                leading: CircleAvatar(
-                  radius: 26,
-                  backgroundImage: FileImage(places[index].image),
-                ),
-                title: Text(
-                  places[index].name,
-                  style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                    color: Theme.of(context).colorScheme.onSurface,
-                  ),
-                ),
-                subtitle: Text(
-                  places[index].location.toString(),
-                  style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                    color: Theme.of(context).colorScheme.onSurface,
-                  ),
-                ),
-                onTap: () => _openPlaceDetails(context, places[index]),
-              ),
-        ),
-      );
-    }
 
     return Scaffold(
       appBar: AppBar(
@@ -71,7 +40,15 @@ class PlacesScreen extends ConsumerWidget {
           ),
         ],
       ),
-      body: content,
+      body: FutureBuilder(
+        future: _placesFuture,
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Center(child: CircularProgressIndicator());
+          }
+          return PlacesList(places: places);
+        },
+      ),
     );
   }
 }

@@ -20,21 +20,23 @@ class _NewPlaceScreenState extends ConsumerState<NewPlaceScreen> {
   File? _selectedImage;
   PlaceLocation? _selectedLocation;
 
-  void _addPlace() {
+  void _addPlace() async {
     if (_formKey.currentState!.validate() &&
         _selectedImage != null &&
         _selectedLocation != null) {
       _formKey.currentState!.save();
+
       ref
           .read(placesProvider.notifier)
           .addPlace(
-            Place(
-              name: _enteredPlaceName,
-              image: _selectedImage!,
-              location: _selectedLocation!,
-            ),
+            name: _enteredPlaceName,
+            image: _selectedImage!,
+            location: _selectedLocation!,
           );
-      Navigator.of(context).pop();
+
+      if (context.mounted) {
+        Navigator.of(context).pop();
+      }
     }
   }
 
@@ -65,7 +67,10 @@ class _NewPlaceScreenState extends ConsumerState<NewPlaceScreen> {
                 const SizedBox(height: 10),
                 ImageInput(onPickImage: (file) => _selectedImage = file),
                 const SizedBox(height: 10),
-                LocationInput(onLocationSelected: (location) => _selectedLocation = location,),
+                LocationInput(
+                  onLocationSelected:
+                      (location) => _selectedLocation = location,
+                ),
                 const SizedBox(height: 16),
                 ElevatedButton.icon(
                   icon: Icon(Icons.add),
